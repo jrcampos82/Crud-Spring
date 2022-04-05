@@ -64,7 +64,10 @@ public class StudentController {
     //----------------------------------------------------------------
     // Aqui chamamos a func update para salvar no be
     @PostMapping("/update/{id}")
-    public String updateStudent(@PathVariable("id") UUID id){
+    public String updateStudent(@PathVariable("id") UUID id, @ModelAttribute Student student, Model model){
+
+        studentService.updateStudent(student);
+
         return "redirect:/student/";
     }
 
