@@ -49,6 +49,14 @@ public class StudentController {
         studentService.delete(id);
         return "redirect:/student/";
     }
+
+
+    @GetMapping("/editt/{id}")
+    public Student editsStudents(@PathVariable("id") UUID id, Model model){
+        Student student = studentService.findById(id);
+        log.info("student pwd = " + student.getPassword());
+        return student;
+    }
     //----------------------------------------------------------------
     // para chamar a página de edit-student.html
     @GetMapping("/edit/{id}")
@@ -56,7 +64,10 @@ public class StudentController {
 
         // try para verificar se realmente existe o id
         // findbyid(id)
+        
         Student student = studentService.findById(id);
+        log.info("student pwd = " + student.getPassword());
+        
         model.addAttribute("student", student);
 
         return "edit-student";
@@ -66,6 +77,7 @@ public class StudentController {
     @PostMapping("/update/{id}")
     public String updateStudent(@PathVariable("id") UUID id, @ModelAttribute Student student, Model model){
 
+        
         studentService.updateStudent(student);
 
         return "redirect:/student/";
