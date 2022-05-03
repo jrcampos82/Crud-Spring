@@ -34,13 +34,13 @@ public class StudentController {
     public String locAll(Model model){
         List<Student> students = studentService.getStudents();  
         model.addAttribute("students", students);
-        return "index";
+        return "index.html";
     }
     //----------------------------------------------------------------
     @GetMapping("/cadastrar")
     public String newStudent(Model model){
         model.addAttribute("student", new Student());
-        return "cadastrar";
+        return "cadastrar.html";
     }
     //----------------------------------------------------------------
     @GetMapping("/remove/{id}")

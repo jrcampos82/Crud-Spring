@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Cadastrar Aluno</title>
+    <title>Cadastrar Turma</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1"
@@ -20,10 +20,10 @@
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-sm-around"
     >
-      <h1 class="navbar-brand">Gestão de Alunos</h1>
+      <h1 class="navbar-brand">Listar Turmas</h1>
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" th:href="@{/student/}">Alunos</a>
+          <a class="nav-link" th:href="@{/turma/}">Turma</a>
         </li>
       </ul>
     </nav>
@@ -34,19 +34,19 @@
             class="col-md-6 col-sm-6 container justify-content-center border"
           >
             <h2>Cadastro de Turma</h2>
-            <form th:action="@{/student/}" th:object="${turma}" method="post">
+            <form th:action="@{/turma/save}" th:object="${turma}" method="post">
               <div class="form-row">
                 <div class="form-group">
                   <label for="name">Nome</label>
                   <input
-                    th:field="*{name}"
+                    th:field="*{nome}"
                     type="text"
                     class="form-control"
-                    id="name"
+                    id="nome"
                     placeholder="Informe o nome"
                   />
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="surname">E-mail</label>
                   <input
                     th:field="*{email}"
@@ -55,7 +55,7 @@
                     id="email"
                     placeholder="Informe o e-mail"
                   />
-                </div>
+                </div> -->
                 <!-- <div class="form-group">
                   <label for="email">Email</label>
                   <input
@@ -66,7 +66,7 @@
                     placeholder="Informe o email"
                   />
                 </div> -->
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="password">Senha</label>
                   <input
                     th:field="*{password}"
@@ -75,7 +75,7 @@
                     id="password"
                     placeholder="Digite a sua senha"
                   />
-                </div>
+                </div> -->
               </div>
               <button type="submit" class="btn btn-success mt-3 mb-3">
                 Cadastrar

@@ -21,11 +21,11 @@ import lombok.NoArgsConstructor;
 public class Professor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    UUID id;
+    Long id;
     String nome;
     @ManyToOne
-    @JoinColumn(name = "turma_id")
+    @JoinColumn(name = "turma_id", nullable = true)
     Turma turma;
-
+    
     
 }
